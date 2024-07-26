@@ -143,6 +143,11 @@ int main() {
             heap_free(ptrs[i - 1]);
     
     heap_alloc(10);
+
+    for (int i = 11;i <= 20;i++) {
+        char *ptr = heap_alloc(i);
+        if (i % 2 == 0) heap_free(ptr);
+    }
     dump_alloc_chunks();    
     dump_freed_chunks();    
     return 0;
