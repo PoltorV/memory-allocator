@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h2>My own malloc</h2> 
+<h2>My own malloc with garbage collector</h2> 
 Usage:
 <pre><code>
 > make
