@@ -16,6 +16,8 @@
 
 extern uintptr_t heap[];
 extern size_t heap_size;
+extern const uintptr_t *stack_base;
+extern int used_chunks[];
 
 typedef struct
 {
@@ -35,9 +37,12 @@ extern Chunk_list freed_chunks;
 void insert_chunk(Chunk_list *list, Chunk chunk);
 void remove_chunk(Chunk_list *list, size_t pos);
 void merge_chunk(Chunk_list *src);
+void mark_used_chunks(const uintptr_t *start, const uintptr_t *end);
+
 
 void *heap_alloc(size_t size_in_bytes);
 void heap_free(void *ptr); 
+void heap_collect();
 
 int find_chunk(Chunk_list *list, void *ptr);
 void dump_alloc_chunks();
