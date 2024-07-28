@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My own malloc</title>
 <link rel="stylesheet" href="bluestyle.css">
 </head>
 <body>
